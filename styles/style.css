@@ -1,9 +1,8 @@
 .header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  width: 1340px;
-  height: 109px;
   margin: 92px auto;
+  padding: 0 50px;
 }
 
 .header__links-list {
@@ -41,12 +40,12 @@
 
 .address {
   align-self: center;
-  width: 240px;
+  max-width: 240px;
   color: #000;
   font-weight: 400;
   font-size: 18px;
-  line-height: normal;
-  line-height: 24.3px; /* 135% */
+  font-style: normal;
+  line-height: 24.3px;
 }
 
 .header__address {
@@ -69,17 +68,16 @@
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: -1;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.6);
 }
 
-/* COVER */
+/* Cover */
 
-.cover { /* ВХОДНАЯ СЕКЦИЯ */
+.cover { /* секция Входная */
   position: relative;
   z-index: 0;
   display: flex;
@@ -107,19 +105,21 @@
 
 .aligned-text {
   width: 100%;
-  height: 115px; /* отличается от дрeгих строк */
+  font-size: 100px;
   line-height: 115%; /* 115px */
 }
 
 .aligned-text_center {
   width: 100%;
-  height: 100px;
+  font-size: 100px;
+  line-height: 100%;
   text-align: center;
 }
 
 .aligned-text_right {
   width: 100%;
-  height: 100px;
+  font-size: 100px;
+  line-height: 100%;
   text-align: right;
 }
 
@@ -166,7 +166,7 @@ word-spacing: 18.1px;
 
 /* Лоты */
 
-.lots { /* СЕКЦИЯ "ЛОТЫ" */
+.lots { /* секция "Лоты" */
   padding: 180px 50px 181px;
 }
 
@@ -190,15 +190,22 @@ word-spacing: 18.1px;
   list-style: none;
 }
 
+.lots__card-list-item { /* пункты списка карточек */
+  flex-grow: 1;
+  width: 430px;
+  height: 450px;
+}
+
 .card { /* все карточки */
   position: relative;
   z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 430px;
-  height: 450px;
+  width: 100%;
+  height: 100%;
   padding: 50px 40px;
+  background-size: cover;
 }
 
 .card__title { /* заголовки карточек */
@@ -225,17 +232,14 @@ word-spacing: 18.1px;
 
 .card_type_film { /* левая карточка */
   background-image: url(../images/card-lot-01.jpg);
-  background-size: cover;
 }
 
 .card_type_book { /* центральная карточка */
   background-image: url(../images/card-lot-02.jpg);
-  background-size: cover;
 }
 
 .card_type_picture { /* правая карточка */
   background-image: url(../images/card-lot-03.jpg);
-  background-size: cover;
 }
 
 .lots__look-more-link { /* ссылка "посмотреть больше" */
@@ -249,13 +253,11 @@ word-spacing: 18.1px;
   line-height: normal;
 }
 
-/* СЕКЦИЯ "ОБ АУКЦИОНЕ" */
+/* секция "Об аукционе" */
 
 .about { /* секция "Об аукционе" */
   display: grid;
   grid-template-columns: 430px 1fr;
-  grid-template-rows: 240px 1fr;
-  row-gap: 8px;
   column-gap: 25px;
   padding: 0 50px;
 }
@@ -272,8 +274,15 @@ word-spacing: 18.1px;
   background-size: 148px 114px;
 }
 
+.about__text-description { /* правая колонка секции "Об аукционе" */
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
 .about__title { /* заголовок "Об аукционе" */
-  align-self: center; /* отцентровал через свойсвто */
+  align-self: flex-start;
+  padding-top: 100px;
   color: #000;
   font-weight: 700;
   font-size: 40px;
@@ -281,10 +290,9 @@ word-spacing: 18.1px;
   text-transform: uppercase;
 }
 
-.about__text { /* Текст "Об аукционе" */
+.about__text { /* текст "Об аукционе" */
   display: flex;
   flex-direction: column;
-  grid-column: 2/3;
   gap: 29px;
   color: #000;
   font-weight: 400;
@@ -308,18 +316,6 @@ word-spacing: 18.1px;
   line-height: normal;
 }
 
-.footer__social-list { /* список ссылок соцсетей футер*/
-  display: flex;
-  gap: 47px;
-  width: 240px;
-  height: 48px;
-  list-style: none;
-}
-
-.footer__social-list-item { /* пункт списка ссылок социальных сетей */
-  width: 50px;
-}
-
 .footer__links-list-item { /* пункт списка меню сайта футер */
   display: flex;
   justify-content: center;
@@ -334,4 +330,14 @@ word-spacing: 18.1px;
 .footer__link { /* ссылка меню сайта футер */
   border-bottom: 1px solid #000000;
   text-decoration: none;
+}
+
+.footer__social-list { /* список ссылок соцсетей футер*/
+  display: flex;
+  gap: 47px;
+  list-style: none;
+}
+
+.footer__social-icon { /* картинки социальных сетей */
+  width: 48px;
 }
