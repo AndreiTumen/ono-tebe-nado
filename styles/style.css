@@ -208,13 +208,17 @@ word-spacing: 18.1px;
   background-size: cover;
 }
 
+.card-link { /* ссылки текста карточек */
+  text-decoration: none;
+}
+
 .card__title { /* заголовки карточек */
   color: #FFF;
   font-weight: 700;
   font-size: 22px;
   line-height: 120%; /* 26.4px */
   text-decoration: underline;
-  text-decoration-line: underline;
+  text-underline-offset: 4px; 
   text-transform: uppercase;
 }
 
@@ -224,10 +228,6 @@ word-spacing: 18.1px;
   font-weight: 400;
   font-size: 20px;
   line-height: 120%; /* 24px */
-}
-
-.card-link { /* ссылки текста карточек */
-  text-decoration: none;
 }
 
 .card_type_film { /* левая карточка */
@@ -251,6 +251,7 @@ word-spacing: 18.1px;
   font-weight: 400;
   font-size: 20px;
   line-height: normal;
+  text-underline-offset: 4px;
 }
 
 /* секция "Об аукционе" */
